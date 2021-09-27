@@ -169,9 +169,10 @@ class TransactionsPage {
      * */
     renderTransactions(data) {
 
+        let content = this.element.querySelector('.content')
         data.forEach((element) => {
-            this.element.insertAdjacentHTML('beforeEnd', this.getTransactionHTML(element))
-            this.element.querySelector(`button[data-id="${element.id}"]`).onclick = (e) => {
+            content.insertAdjacentHTML('beforeEnd', this.getTransactionHTML(element))
+            content.querySelector(`button[data-id="${element.id}"]`).onclick = (e) => {
                 this.removeTransaction(element.id)
             }
         })
